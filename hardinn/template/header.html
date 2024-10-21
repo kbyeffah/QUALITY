@@ -1,0 +1,26 @@
+{% load static %}
+
+
+<header>
+    <nav class="navbar">
+        <div class="col">{% if request.user.is_authenticated %}
+            <p>{{request.user}}</p>
+            <p>{{key}}</p>
+            <a href="{% url 'login' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}">login</a>
+            {% endif %}</div>
+        <a class="link-principal link-menu" href="/index">Home</a>
+        <a class="link-menu" href="/hardinn/template/pc.html">PC</a>
+        <a class="link-menu" href="/hardinn/template/phone.html">Phone
+        <a class="link-menu" href="/hardinn/template/phone.html"> 
+            {% if request.user.is_superuser or request.user.is_staff %}
+            <a href="{% url 'admin' %}">AdminPage</a>
+            {% endif %}</a>
+        
+
+        </a>    
+    </nav>
+    <input type="search" onkeyup="pesquisar()" class="search" id="search" placeholder="Search">
+    <button onclick="pesquisa()"></button>
+</header>

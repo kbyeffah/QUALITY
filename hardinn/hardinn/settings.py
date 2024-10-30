@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'Fproj',
     'authentication',
     'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
+    "verify_email.apps.VerifyEmailConfig",
     'custom_user',
- 
 ]
 
 MIDDLEWARE = [
@@ -78,6 +78,8 @@ WSGI_APPLICATION = 'hardinn.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -100,6 +102,15 @@ AUTH_USER_MODEL = 'custom_user.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_ID') 
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PW')
+DEFAULT_FROM_EMAIL = 'noreply<no_reply@domain.com>'
 
 AUTH_PASSWORD_VALIDATORS = [
     {

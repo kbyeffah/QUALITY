@@ -9,6 +9,7 @@ from django.views.generic import FormView
 
 
 
+
 def index(request):
     context = {"key": "I am at Home "}
     return render(request, "authentication/home.html", context)
@@ -20,7 +21,28 @@ class CustomLoginView(LoginView):
 
     def get_success_url(self):
         # if User.is_staff or User.is_superuser:
-            return reverse_lazy("home")
+            # return reverse_lazy("home")
+        
+        if self.request.method == "POST":
+            try:
+                remember_me = str(self.request.POST['checkbox'])
+                if remember_me: 
+             # This if statement can change, 
+             # but the purpose is checking remember me checkbox is checked or not.
+                   self.request.session.set_expiry(86400 * 28) # Here we extend session.
+                   print("Check")
+
+            except:
+                   # This part of code means, close session when browser is closed.
+                   self.request.session.set_expiry(0) 
+                   print("UnCheck")
+
+
+        else:
+             # GET method
+             if self.request.user.is_authenticated: 
+                print(" Remember ME !!!!")
+        return reverse_lazy('home')    
         
         
 
@@ -41,4 +63,6 @@ class CustomRegisterView(FormView):
         if self.request.user.is_authenticated:
             return redirect("home")  # Prevent User Registeration form from showing
         return super(CustomRegisterView, self).get(request, *args, **kwargs)
+    
+    
 

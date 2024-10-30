@@ -19,3 +19,6 @@ def pc(request):
 def phone(request):
     return render(request, 'phone.html')
 
+def home(request):
+    return render(request, 'index.html')
+

@@ -26,9 +26,10 @@ urlpatterns = [
     path('admin/', RedirectView.as_view(url='/admin'),name="admin"),
     # path('', index, name="home"),
     path("", include("authentication.urls")),
-#     path('hardinn/template/pc.html', views.pc),
-#     path('hardinn/template/phone.html', views.phone),
-#     path('', views.index),
+    path('',include('django.contrib.auth.urls')),
+    path('hardinn/template/pc.html', views.pc),
+    path('hardinn/template/phone.html', views.phone),	
+    # path('', views.index),
  ]
 
 

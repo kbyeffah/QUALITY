@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    HOME
+{% endblock %}
+
+{% block content %}
+<hr>
+<section>
+	<h1> Bookmarks</h1> <a style="color:black;"
+	<main class="main" >
+            {% if cart %}
+      {% for product in cart %}
+           <a href="/product-detail/{{product.id}}">
+        </a>
+			<div class="box">
+                 <div><img src="{{product.product.image.url}}" height="50%"  width="50%"  class="image"> </div>
+                        {% csrf_token %}
+
+		{% endfor %}
+
+        {% else %}
+        <div>Your Cart is Empty</div>
+        {% endif %}
+	</main>
+	<hr>
+</section>
+
+{% endblock %}

@@ -21,155 +21,32 @@
         </div>
     </div>
     <div id="container" class="container">
-            <a class="card" href="espaco1.html" style="background-image: url('{% static 'img/espaco1.png' %}');">
-            <h1>Baixar</h1>
-            <w>Planeta - Espaço - Espaco - Paisagem</w>
-        </a>
-            <a class="card" href="homem_aranha1.html" style="background-image: url('{% static 'img/homem_aranha1' %}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
+        {% for product in Laptop %}
+            <div>
+                <a class="card" href="{{product.image.url}} "height="50%"  width="50%" style="background-image: url('{{product.image.url}}');">
+                    <h1>{{product.name}} </h1>
+                
+                    <w>Planeta - Espaço - Espaco - Paisagem</w>
+                    <a href="/productimage.url/{{product.id}}" </a>
+                    
+                <div style="margin: 12px;"><a href="/add-cart/{{product.id}}">Bookmark</a></div>
+            </div>
+            {% endfor %}
 
-            <a class="card" href="espaco2.html" style="background-image: url('{% static 'img/espaco2.png' %}');">
-            <h1>Baixar</h1>
-            <w>Planeta - Espaço - Espaco - Paisagem</w>
-        </a>
-
-            <a class="card" href="homem_aranha2.html" style="background-image: url('{% static 'img/homem_aranha2.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
-
-            <a class="card" href="espaco3.html" style="background-image: url('{%static 'img/espaco3.png'%}');">
-            <h1>Baixar</h1> 
-            <w>Planeta - Espaço - Espaco - Paisagem</w>
-        </a>
-
-            <a class="card" href="homem_aranha3.html" style="background-image: url('{% static 'img/homem_aranha3.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
-
-            <a class="card" href="planeta1.html" style="background-image: url('{%static 'img/planeta1.png'%}');">
-            <h1>Baixar</h1>
-            <w>Planeta - Espaço - Espaco - Paisagem</w>
-        </a>
-
-            <a class="card" href="homem_aranha4.html" style="background-image: url('{%static 'img/homem_aranha4.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
-
-            <a class="card" href="montanha.html" style="background-image: url('{%static 'img/montanha.png'%}');">
-            <h1>Baixar</h1>
-            <w>Montanha - Espaço - Espaco - Paisagem</w>
-        </a>
-
-            <a class="card" href="homem_aranha5.html" style="background-image: url('{%static 'img/homem_aranha5.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
-
-            <a class="card" href="montanha2.html" style="background-image: url('{%static 'img/montanha2.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
-
-            <a class="card" href="espaco2.html" style="background-image: url('{%static 'img/espaco2.png'%}');">
-            <h1>Baixar</h1>
-            <w>Planeta - Espaço - Espaco - Paisagem</w>
-        </a>
-
-            <a class="card" href="espaco4.html" style="background-image: url('{%static 'img/espaco4.png'%}');">
-            <h1>Baixar</h1>
-            <w>Planeta - Espaço - Espaco - Paisagem</w>
-        </a>
-
-            <a class="card" href="homem_aranha6.html" style="background-image: url('{%static 'img/homem_aranha6.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
-            <a class="card" href="homem_aranha7.html" style="background-image: url('{%static 'img/homem_aranha7.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
     </div>
 
     <h1 class="titulo-dispositivo">Wallpapers for Phone</h1>
     <div id="container" class="container">
-        <h1 class="txt-nao-encontrado">Nenhum Encontrado</h1>
-        <a class="card-cell" href="estrada_mobile.html" style="background-image: url('{%static 'img/estrada_mobile.png'%}');">
-                <h1>Baixar</h1>
-                <w>Planeta - Espaço - Espaco - Paisagem - Estrada</w>
-        </a>
-        <a class="card-cell" href="homem_aranha1_mobile.html" style="background-image: url('{%static 'img/homem_aranha1_mobile.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
 
-        <a class="card-cell" href="estrada2_mobile.html" style="background-image: url('{%static 'img/estrada2_mobile.png'%}');">
-            <h1>Baixar</h1>
+        {% for product in Phone %}
+       <div>
+        <a class="card-cell" href="{{product.image.url}}" style="background-image: url('{{product.image.url}}');">
+            <h1>{{product.name}}</h1>
             <w>Planeta - Espaço - Espaco - Paisagem - Estrada</w>
-        </a>
-
-        <a class="card-cell" href="homem_aranha2_mobile.html" style="background-image: url('{%static 'img/homem_aranha2_mobile.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
-
-        <a class="card-cell" href="estrada3_mobile.html" style="background-image: url('{%static 'img/estrada3_mobile.png'%}');">
-            <h1>Baixar</h1>
-            <w>Planeta - Espaço - Espaco - Paisagem - Estrada</w>
-        </a>
-
-        <a class="card-cell" href="homem_aranha3_mobile.html" style="background-image: url('{%static 'img/homem_aranha3_mobile.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
-
-        <a class="card-cell" href="homem_de_ferro_mobile.html" style="background-image: url('{%static 'img/homem_de_ferro_mobile.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - Homem de Ferro - super-heróis - super-herois - super herois</w>
-        </a>
-
-        <a class="card-cell" href="homem_aranha4_mobile.html" style="background-image: url('static 'img/homem_aranha4_mobile.png'');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
-
-        <a class="card-cell" href="montanha_mobile.html" style="background-image: url('{%static 'img/montanha_mobile.png'%}');">
-            <h1>Baixar</h1>
-            <w>Planeta - Espaço - Espaco - Paisagem - Estrada</w>
-        </a>
-
-        <a class="card-cell" href="astronauta.html" style="background-image: url('{%static 'img/astronauta.png'%}');">
-            <h1>Baixar</h1>
-            <w>Planeta - Espaço - Espaco - Paisagem - Astronauta</w>
-        </a>
-
-        <a class="card-cell" href="ilha_caveira_mobile.html" style="background-image: url('{%static 'img/ilha_caveira_mobile.png'%}');">
-            <h1>Baixar</h1>
-            <w>Planeta - Espaço - Espaco - Paisagem - Ilha - Caveira</w>
-        </a>
-
-        <a class="card-cell" href="espaco2_mobile.html" style="background-image: url('{%static 'img/espaco2_mobile.png'%}');">
-            <h1>Baixar</h1>
-            <w>Planeta - Espaço - Espaco - Paisagem - Ilha - Caveira</w>
-        </a>
-
-        <a class="card-cell" href="espaco4_mobile.html" style="background-image: url('{%static 'img/espaco4_mobile.png'%}');">
-            <h1>Baixar</h1>
-            <w>Planeta - Espaço - Espaco - Paisagem - Ilha - Caveira</w>
-        </a>
-
-        <a class="card-cell" href="vingadores.html" style="background-image: url('{%static 'img/vingadores.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - - Homem de Ferro - Capitão América - Capitao America - Vingadores - super-heróis - super-herois - super herois</w>
-        </a>
-        <a class="card-cell" href="homem_aranha7_mobile.html" style="background-image: url('{%static 'img/homem_aranha7_mobile.png'%}');">
-            <h1>Baixar</h1>
-            <w>Homem Aranha - super-heróis - super-herois - super herois</w>
-        </a>
+         </a>
+         <div style="margin: 12px;"><a href="add-cart/{{product.id}}">Bookmark</a></div>
+       </div>
+       {% endfor %}
     </div>
 </main>
 

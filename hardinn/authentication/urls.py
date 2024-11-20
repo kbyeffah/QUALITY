@@ -7,13 +7,12 @@ from django.views.generic.base import RedirectView
 from django.urls import path, include
 
 urlpatterns = [
-     path('', index, name="home"),
-     path("logout/", LogoutView.as_view(next_page="login"), name="logout"),
+     path('index', index, name="home"),
+     path("logout/", LogoutView.as_view(next_page="logout"), name="logout"),
      path("login/",CustomLoginView.as_view(),name="login"),
      path("register/",CustomRegisterView.as_view(),name="register"),
-     # path('',include('django.contrib.auth.urls'))
+     path('',include('django.contrib.auth.urls')),
      path("accounts/login/",CustomLoginView.as_view(),name="login"),
      path('login/', RedirectView.as_view(url = '/accounts/login'), name = "login"),
      path('verification/', include('verify_email.urls')),
 ]
-

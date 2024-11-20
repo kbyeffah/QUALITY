@@ -10,11 +10,12 @@
             {% else %}
             <a href="{% url 'login' %}">login</a>
             {% endif %}</div>
-        <a class="link-principal link-menu" href="/index">Home</a>
+        <a class="link-principal link-menu" href="hardinn/templates/index.html">Home</a>
         <a class="link-menu" href="/hardinn/template/pc.html">PC</a>
         <a class="link-menu" href="/hardinn/template/phone.html">Phone
         {% if request.user.is_superuser or request.user.is_staff %}
         <a href="{% url 'admin' %}">AdminPage</a>
+        <a class="link-menu" href="/Show_Cart/">Bookmarks</a>
         {% endif %} 
         </a>    
     </nav>

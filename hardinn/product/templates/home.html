@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    HOME
+{% endblock %}
+
+{% block content %}
+
+<hr>
+    <h1> Products </h1>
+	<main class="main" >
+      {% for myproduct in Phone %}
+		<a href="/product/product-detail/{{myproduct.id}}">
+			<div class="box">
+				<a href="/add-cart/{{myproduct.id}}" style="color:white">addCart</a></small>
+			<img src="{{myproduct.image.url}}" height="100%"  width="100%"  class="image">
+			<small>{{myproduct.name}}</small>
+			<small>$ {{myproduct.price}}</small>
+				<small><a href="/add-cart/">addCart</a></small>
+		</div>
+		</a>
+		 {% endfor %}
+	</main>
+{% endblock %}
+

@@ -19,6 +19,8 @@ from .import views
 from django.urls import path, include
 from authentication.views import index
 from django.views.generic.base import RedirectView
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -29,14 +31,11 @@ urlpatterns = [
     path('',include('django.contrib.auth.urls')),
     path('hardinn/template/pc.html', views.pc),
     path('hardinn/template/phone.html', views.phone),	
-    # path('', views.index),
+    # path('', views.home),
+    path("", include("Cart.urls")),
+    path("", include("product.urls")),
  ]
 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('', views.index),
-#     path('hardinn/template/pc.html', views.pc),
-#     path('hardinn/template/phone.html', views.phone),
-
-# ]

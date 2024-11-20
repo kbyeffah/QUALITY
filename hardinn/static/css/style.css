@@ -82,7 +82,7 @@ nav a{
 
 header{
     min-height: 500px;
-    background-image: url('../img/espaco2.png');
+    background-image: url('../img/espaco3.png');
     box-shadow: inset 0 0 20px 310px rgb(0, 0, 0, 0.2);
     background-position: center;
     background-repeat: no-repeat;
@@ -389,3 +389,5 @@ w{
         padding: 50px 0!important;
     }
 }
+
+

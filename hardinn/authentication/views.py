@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth import login
 from custom_user.admin import UserCreationForm
 from django.views.generic import FormView
+from verify_email.email_handler import send_verification_email
 
 
 
@@ -47,22 +48,51 @@ class CustomLoginView(LoginView):
         
 
 
+# class CustomRegisterView(FormView):
+#     template_name = "authentication/register.html"
+#     form_class = UserCreationForm
+#     redirect_authenticated_user = True
+#     success_url = reverse_lazy("login") # Automatically redirect to homepage after Registration
+
+#     def form_valid(self, form):
+#         user = form.save()  # Automatically Save Registering User
+#         if user is not None:
+#             login(self.request, user)  # Automatically log us in
+#         return super(CustomRegisterView, self).form_valid(form)
+
+#     def get(self, request, *args, **kwargs):
+#         if self.request.user.is_authenticated:
+#             return redirect("home")  # Prevent User Registeration form from showing
+#         return super(CustomRegisterView, self).get(request, *args, **kwargs)
+    
+    
+
+def register_user(request):
+    
+    if form.is_valid():
+
+        inactive_user = send_verification_email(request, form)
+        inactive_user.cleaned_data['email']
+
+        # Output: test-user123@gmail.com
+
+inactive_user = ''
+
+def send_welcome_email(request):
+        subject = 'Welcome To My Site'
+        massage = 'Thank you for creating an account!'
+        from_mail = 'admin@Mysite.com'
+        global inactive_user
+        recepient_list = [inactive_user]
+        send_mail(subject,massage,from_mail,recepient_list)
+        return redirect("home")
+
 class CustomRegisterView(FormView):
-    template_name = "authentication/register.html"
-    form_class = UserCreationForm
-    redirect_authenticated_user = True
-    success_url = reverse_lazy("home") # Automatically redirect to homepage after Registration
-
-    def form_valid(self, form):
-        user = form.save()  # Automatically Save Registering User
-        if user is not None:
-            login(self.request, user)  # Automatically log us in
+     def form_valid(self, form):
+        # user = form.save()  # Automatically Save Registering User
+        global inactive_user
+        inactive_user = send_verification_email(self.request, form) 
+        form.cleaned_data['email']
+        if inactive_user is not None:
+            login(self.request, inactive_user)  # Automatically log us in
         return super(CustomRegisterView, self).form_valid(form)
-
-    def get(self, request, *args, **kwargs):
-        if self.request.user.is_authenticated:
-            return redirect("home")  # Prevent User Registeration form from showing
-        return super(CustomRegisterView, self).get(request, *args, **kwargs)
-    
-    
-

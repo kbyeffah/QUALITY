@@ -1,0 +1,17 @@
+{% extends 'product/layout.html' %}
+
+{%  block title %}
+
+{% endblock %}
+
+{% block content %}
+	<hr>
+<main class="main" >
+        <a href="/show/{{product.id}}">
+			<div class="box">
+			<img src = "{{productimage.url}}" height="100%"  width="100%"  class="image">
+		</div>
+		</a>
+	</main>
+	<hr>
+{% endblock %}

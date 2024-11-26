@@ -67,25 +67,25 @@ class CustomLoginView(LoginView):
     
     
 
-def register_user(request):
+# def register_user(request):
     
-    if form.is_valid():
+#     if form.is_valid():
 
-        inactive_user = send_verification_email(request, form)
-        inactive_user.cleaned_data['email']
+#         inactive_user = send_verification_email(request, form)
+#         inactive_user.cleaned_data['email']
 
-        # Output: test-user123@gmail.com
+#         # Output: test-user123@gmail.com
 
-inactive_user = ''
+# inactive_user = ''
 
-def send_welcome_email(request):
-        subject = 'Welcome To My Site'
-        massage = 'Thank you for creating an account!'
-        from_mail = 'admin@Mysite.com'
-        global inactive_user
-        recepient_list = [inactive_user]
-        send_mail(subject,massage,from_mail,recepient_list)
-        return redirect("home")
+# def send_welcome_email(request):
+#         subject = 'Welcome To My Site'
+#         massage = 'Thank you for creating an account!'
+#         from_mail = 'admin@Mysite.com'
+#         global inactive_user
+#         recepient_list = [inactive_user]
+#         send_mail(subject,massage,from_mail,recepient_list)
+#         return redirect("home")
 
 class CustomRegisterView(FormView):
      def form_valid(self, form):

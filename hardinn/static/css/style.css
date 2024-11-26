@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 .card, .card-page, .card-cell{
     background-size: cover;
     background-position: center;
@@ -13,7 +14,7 @@
     margin-top: 50px;
     cursor: pointer;
     transition: 0.5s;
-    display: grid;
+    display:grid;
     place-items: center;
     color: #fff;
     font-family: Arial;

@@ -74,12 +74,12 @@ def Update_Cart(request, product_id):
         return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
 
 
-def Delete_Cart(request, product_id):
+def delete_cart_item(request, product_id):
     if request.user.is_authenticated:
         product = Product.objects.get(id=product_id)
         cart = Cart.objects.filter(product=product)
         cart.delete()
-        # Retrieve The number of cart related to a particular user
+    # Retrieve The number of cart related to a particular user
         Added_cart = Cart.objects.filter(user=request.user).count()
 
         # Save cart Count to a session
@@ -88,3 +88,6 @@ def Delete_Cart(request, product_id):
         return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
     else:
         return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
+
+            
+        

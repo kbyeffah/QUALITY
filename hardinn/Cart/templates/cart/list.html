@@ -10,12 +10,19 @@
 <section>
 	<h1> Bookmarks</h1> <a style="color:black;"
 	<main class="main" >
-            {% if cart %}
-      {% for product in cart %}
-           <a href="/product-detail/{{product.id}}">
-        </a>
-			<div class="box">
-                 <div><img src="{{product.product.image.url}}" height="50%"  width="50%"  class="image"> </div>
+        {% if cart %}
+{% for product in cart %}
+<link rel="stylesheet" href="/hardinn/static/css/liststyle.css">
+ <a href="/product-detail/{{product.id}}"> </a>
+	<div class= "mine">
+     <div><img src="{{product.product.image.url}}" height="50%"  width="50%"></div>
+    <a href="/delete-cart-item/{{product.id}}">Delete</a> <a href=""  download="{{product.image.url}}">Download </a></div>
+    </div>
+
+                 
+                              
+                    
+                    
                         {% csrf_token %}
 
 		{% endfor %}
@@ -28,3 +35,4 @@
 </section>
 
 {% endblock %}
+

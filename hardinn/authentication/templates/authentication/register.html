@@ -1,18 +1,26 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="stylesheet" href="/hardinn/static/css/registerstyle.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register</title>
 </head>
 <body>
-    <h1> Register Page</h1>
-    <form method="post" style="width:10%" align ="center">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Register">
-    </form>
-    
-    <P>Already have an account? <a href="{% url 'login'%}">Login</a></P>
+    <div class = "parent">
+        <div class="border"></div>
+        <form>
+            <h1> REGISTER </h1>
+            <label>First Name</label><input type = "text">
+            <label>Last Name</label><input type = "text">
+            <label>Email</label><input type = "text">
+            <label>Password</label><input type = "password">
+            <label>Confirm Password</label><input type = "password">
+            <button> Register </button>
+            <P>Already have an account? <a href="/hardinn/authentication/templates/authentication/login.html">Login</a></P>
+        </form>
+    </div>
 </body>
 </html>

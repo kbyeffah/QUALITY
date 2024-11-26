@@ -10,7 +10,7 @@
             {% else %}
             <a href="{% url 'login' %}">login</a>
             {% endif %}</div>
-        <a class="link-principal link-menu" href="hardinn/templates/index.html">Home</a>
+        <a class="link-menu" href="/">Home</a>
         <a class="link-menu" href="/hardinn/template/pc.html">PC</a>
         <a class="link-menu" href="/hardinn/template/phone.html">Phone
         {% if request.user.is_superuser or request.user.is_staff %}
@@ -19,6 +19,4 @@
         {% endif %} 
         </a>    
     </nav>
-    <input type="search" onkeyup="pesquisar()" class="search" id="search" placeholder="Search">
-    <button onclick="pesquisa()"></button>
 </header>

@@ -16,8 +16,10 @@
  <a href="/product-detail/{{product.id}}"> </a>
 	<div class= "mine">
      <div><img src="{{product.product.image.url}}" height="50%"  width="50%"></div>
-    <a href="/delete-cart-item/{{product.id}}">Delete</a> <a href=""  download="{{product.image.url}}">Download </a></div>
-    </div>
+     <form action="/Delete_Cart/{{myproduct.product.id}}" method="post" style="margin:20px">
+        {% csrf_token %}
+     <input type="submit" value="Delete">
+     </form>
 
                  
                               

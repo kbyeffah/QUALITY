@@ -37,13 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Fproj',
-    'authentication',
-    'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
-    "verify_email.apps.VerifyEmailConfig",
-    'custom_user',
-    'product',
-    'Cart',
+    # 'Fproj',
+    # 'authentication',
+    # 'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
+    # "verify_email.apps.VerifyEmailConfig",
+    # 'custom_user',
+    # 'product',
+    # 'Cart',
 ]
 
 MIDDLEWARE = [
@@ -89,7 +89,7 @@ DATABASES = {
     }
 }
 
-AUTH_USER_MODEL = 'custom_user.User'
+# AUTH_USER_MODEL = 'custom_user.User'
 
 # DATABASES = {
 #     'default': {

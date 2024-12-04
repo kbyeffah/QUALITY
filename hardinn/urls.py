@@ -15,27 +15,29 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-# from .import views
+from .import views
 from django.urls import path, include
-# from authentication.views import index
-# from django.views.generic.base import RedirectView
-# from django.conf import settings
-# from django.conf.urls.static import static
+from authentication.views import index
+from django.views.generic.base import RedirectView
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [ 
     path('admin/', admin.site.urls),
-]
-#     path('admin/', RedirectView.as_view(url='/admin'),name="admin"),
-#     # path('', index, name="home"),
-#     path("", include("authentication.urls")),
-#     path('',include('django.contrib.auth.urls')),
-#     path('hardinn/template/pc.html', views.pc),
-#     path('hardinn/template/phone.html', views.phone),	
-#     # path('', views.home),
-#     path("", include("Cart.urls")),
-#     path("", include("product.urls")),
+    path('admin/', RedirectView.as_view(url='/admin'),name="admin"),
+    # path('', index, name="home"),
+    path("", include("authentication.urls")),
+    path('',include('django.contrib.auth.urls')),
+    path('hardinn/template/pc.html', views.pc),
+    path('hardinn/template/phone.html', views.phone),	
+    # path('', views.home),
+    path("", include("Cart.urls")),
+    path("", include("product.urls")),
+]    
 
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+
 
